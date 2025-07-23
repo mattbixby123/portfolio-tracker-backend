@@ -36,6 +36,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/public/**").permitAll()
                         .requestMatchers("/actuator/**").permitAll()  // For monitoring
+                        .requestMatchers("/error").permitAll()  // Allow error page
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
