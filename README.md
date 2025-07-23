@@ -164,13 +164,14 @@ The application will start on `http://localhost:8080`
 **POST /api/v1/transactions/buy**
 ```json
 {
-  "stockTicker": "AAPL",
-  "quantity": 10,
-  "price": 150.25,
-  "fee": 9.99,
-  "transactionType": "BUY"
+   "stockTicker": "AAPL",
+   "quantity": 10,
+   "price": 150.25,
+   "fee": 0.00,
+   "transactionType": "BUY"
 }
 ```
+fee (optional): Transaction cost (e.g. brokerage fee). Defaults to 0.00 if not provided.
 
 ## 🧪 Testing
 
@@ -179,7 +180,7 @@ The application includes comprehensive test coverage for controller and service 
 **Run all tests:**
 ```bash
 mvn test
-```
+
 
 **Run specific test classes:**
 ```bash
