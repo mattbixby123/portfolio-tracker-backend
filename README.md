@@ -11,6 +11,7 @@ A comprehensive investment portfolio tracking system built with enterprise-grade
 - **Performance Analytics**: Track portfolio performance and individual stock metrics
 - **Secure Authentication**: JWT-based authentication with Spring Security
 - **Data Persistence**: Robust PostgreSQL database with Flyway migrations
+- **Interactive API Documentation**: Comprehensive Swagger UI for API exploration and testing
 
 ## 🛠️ Tech Stack
 
@@ -26,6 +27,7 @@ A comprehensive investment portfolio tracking system built with enterprise-grade
 - **JUnit 5** - Modern testing framework
 - **Testcontainers** - Integration testing with real database instances
 - **Lombok** - Reduced boilerplate code
+- **SpringDoc OpenAPI** - Interactive API documentation with Swagger UI
 
 ## 📋 Prerequisites
 
@@ -77,9 +79,13 @@ Before running this application, make sure you have:
    ```bash
    mvn spring-boot:run -Dspring-boot.run.profiles=local
    ```
+   The application will start on `http://localhost:8080`
 
-The application will start on `http://localhost:8080`
+6. **Access API Documentation**
 
+   Navigate to: `http://localhost:8080/swagger-ui.html`
+
+   Use this interactive interface to explore and test all API endpoints.
 ## 🔗 API Endpoints
 
 ### Authentication (`/api/v1/auth`)
@@ -172,6 +178,30 @@ The application will start on `http://localhost:8080`
 }
 ```
 fee (optional): Transaction cost (e.g. brokerage fee). Defaults to 0.00 if not provided.
+
+## 📖 API Documentation
+
+### Interactive Swagger UI
+Once the application is running, you can explore and test all API endpoints using the interactive Swagger documentation:
+
+**🔗 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**
+
+The Swagger UI provides:
+- **Complete API Reference** - All endpoints with request/response schemas
+- **Interactive Testing** - Test API calls directly from the browser
+- **Authentication Support** - Built-in JWT token management
+- **Real-time Validation** - Request validation with immediate feedback
+- **Export Options** - Download OpenAPI 3.0 specification
+
+### OpenAPI Specification
+- **JSON Format**: `http://localhost:8080/v3/api-docs`
+- **YAML Format**: `http://localhost:8080/v3/api-docs.yaml`
+
+### Authentication in Swagger
+1. Use the `/api/v1/auth/login` endpoint to get your JWT token
+2. Click the "Authorize" button in Swagger UI
+3. Enter: `Bearer your-jwt-token-here`
+4. Now you can test authenticated endpoints directly
 
 ## 🧪 Testing
 
